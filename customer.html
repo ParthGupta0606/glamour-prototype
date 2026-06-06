@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                ✦ Glamour Studio
+            </div>
+            <nav>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+                <a href="appointments.html">  
+                    Appointment
+                </a>
+                <a href="customer.html"class="active">
+                    Customers
+                </a>
+                <a href="whatsapp.html" >
+                    WhatsApp
+                </a>
+                <a href="#">
+                    Logout
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1>Customers</h1>
+                    <p>Manage customer relationships and loyalty.</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search customers...">
+            </div>
+
+            <div class="customer-table-card">
+                <table id="customerTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Last Visit</th>
+                            <th>Total Visits</th>
+                            <th>Loyalty Points</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="customer-row">
+                            <td>Neha Kapoor</td>
+                            <td>+91 98765 43210</td>
+                            <td>Today</td>
+                            <td>24</td>
+                            <td>1,200 pts</td>
+                            <td>
+                                <span class="status vip">VIP</span>
+                            </td>
+                        </tr>
+                        <tr class="customer-row">
+                            <td>Sunita Verma</td>
+                            <td>+91 91234 56789</td>
+                            <td>3 days ago</td>
+                            <td>11</td>
+                            <td>550 pts</td>
+                            <td>
+                                <span class="status regular">Regular</span>
+                            </td>
+                        </tr>
+                        <tr class="customer-row">
+                            <td>Ananya Shah</td>
+                            <td>+91 8765432109</td>
+                            <td>1 week ago</td>
+                            <td>6</td>
+                            <td>300 pts</td>
+                            <td>
+                                <span class="status regular">Regular</span>
+                            </td>
+                        </tr>
+                        <tr class="customer-row">
+                            <td>Meera Joshi</td>
+                            <td>+91 99887 76655</td>
+                            <td>2 weeks ago</td>
+                            <td>3</td>
+                            <td>150 pts</td>
+                            <td>
+                                <span class="status new">New</span>
+                            </td>
+                        </tr>
+                        <tr class="customer-row">
+                            <td>Preethi Nair</td>
+                            <td>+91 99887 76655</td>
+                            <td>2 weeks ago</td>
+                            <td>8</td>
+                            <td>450 pts</td>
+                            <td>
+                                <span class="status risk">At Risk</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <div class="profile-panel" id="profilePanel">
+            <button class="close-panel" id="closePanel">  ✕  </button>
+            <h2>Neha Kapoor</h2>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Email:</strong> neha@example.com</p>
+            <p><strong>Birthday:</strong> 12 June</p>
+            <hr>
+            <h3>Visit History</h3>
+            <ul>
+                <li>Hair Colour — ₹2,200</li>
+                <li>Facial — ₹1,500</li>
+                <li>Haircut — ₹700</li>
+            </ul>
+            <hr>
+            <p><strong>Favourite Service:</strong> Hair Colour </p>
+            <p><strong>Loyalty Points:</strong> 1,200</p>
+            <p><strong>Tier:</strong> VIP</p>
+            <div class="profile-actions">
+                <button class="whatsapp-btn">
+                    Send WhatsApp
+                </button>
+                <button class="book-btn"> Book Appointment </button>
+            </div>
+
+        </div>
+    </div>
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+
+    const filter =
+    searchInput.value.toLowerCase();
+
+    const rows =
+    document.querySelectorAll(
+        "#customerTable tbody tr"
+    );
+
+    rows.forEach(row => {
+
+        const name =
+        row.cells[0].textContent.toLowerCase();
+
+        if(name.includes(filter)){
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
+<script>
+
+const rows =
+document.querySelectorAll(".customer-row");
+
+const panel =
+document.getElementById("profilePanel");
+
+const closeBtn =
+document.getElementById("closePanel");
+
+rows.forEach(row => {
+
+    row.addEventListener("click", () => {
+
+        panel.classList.add("active");
+
+    });
+
+});
+
+closeBtn.addEventListener("click", () => {
+
+    panel.classList.remove("active");
+
+});
+
+</script>
+</body>
+</html>

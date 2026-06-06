@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                ✦ Glamour Studio
+            </div>
+            <nav>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+                <a href="appointments.html">  
+                    Appointment
+                </a>
+                <a href="customer.html">
+                    Customers
+                </a>
+                <a href="whatsapp.html" class="active">
+                    WhatsApp
+                </a>
+                <a href="#">
+                    Logout
+                </a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1>WhatsApp Automation</h1>
+                    <p>All messages are sent automatically. Zero manual effort.</p>
+                </div>
+            </div>
+
+            <div class="automation-grid">
+                <div class="automation-card">
+                    <div class="automation-info">
+                        <h3>Booking Confirmed</h3>
+                        <p>Hi Neha! Your appointment at Avon Studio is confirmed for...</p>
+                    </div>
+                    <div class="automation-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="test-btn"> Send Test Message</button>
+                    </div>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-info">
+                        <h3>24-Hour Reminder</h3>
+                        <p>Hi Neha! Your appointment at Avon Studio is </p>
+                    </div>
+                    <div class="automation-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="test-btn"> Send Test Message</button>
+                    </div>
+                </div>
+                <div class="automation-card">
+                    <div class="automation-info">
+                        <h3>Post-Visit Thank You</h3>
+                        <p>Hi Neha! Your appointment at Avon Studio is confirmed for...</p>
+                    </div>
+                    <div class="automation-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="test-btn"> Send Test Message</button>
+                    </div>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-info">
+                        <h3>Birthday Wish</h3>
+                        <p>Hi Neha! Avon Salon Team wishes you happy Birthday!!</p>
+                    </div>
+                    <div class="automation-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="test-btn"> Send Test Message</button>
+                    </div>
+                </div>
+
+                <div class="automation-card">
+                    <div class="automation-info">
+                        <h3>Google Review Request</h3>
+                        <p>Hi Neha! Your appointment at Avon Studio is confirmed for...</p>
+                    </div>
+                    <div class="automation-actions">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <button class="test-btn"> Send Test Message</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toast" id="toast">
+                📱 Test message sent to +91 9950542306
+            </div>
+        </main>
+    
+    </div>
+    <script>
+    const toast = document.getElementById("toast");
+    const testButtons = document.querySelectorAll(".test-btn");
+    testButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+        });
+    });
+    </script>
+    
+</body>
+</html>

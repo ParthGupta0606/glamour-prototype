@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Management Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1 class="brand-name">Glamour Studio</h1>
+            
+            <p class="tagline">Manage smarter. Grow faster.</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" value="owner@avonstudio.in">
+                </div>
+                
+                <div class="input-group"><label>Password</label>
+                    <input type="password" value="password123">
+                </div>
+                <div class="input-group">
+                    <label>Role</label>
+                    <select>
+                        <option selected>
+                            Owner                
+                        </option>
+
+                        <option>
+                            Receptionist
+                        </option>
+                        <option>
+                            Staff
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit">            
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

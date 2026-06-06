@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <div class="logo">
+        ✦ Glamour Studio
+      </div>
+
+      <nav>
+        <a href="dashboard.html" class="active">
+          Dashboard
+        </a>
+        <a href="appointments.html">
+          Appointment
+        </a>
+        <a href="customer.html">
+          Customers
+        </a>
+        <a href="whatsapp.html">
+          WhatsApp
+        </a>
+        <a href="#">
+          Logout
+        </a>
+
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+           <h1 id="greeting">
+              Good Morning, Owner 👋
+            </h1>
+
+            <p id="date">
+              Wednesday, 3 June 2026
+            </p>
+
+        </div>
+        <div class="welcome-banner">
+          <div>
+            <h2>Salon Performance Overview</h2>
+            <p>Track revenue, appointments and customer growth in one place.</p>
+          </div>
+        </div>
+        <div class="notification-wrapper">
+          <button class="notification-btn">
+            🔔
+          </button>
+          <span class="notification-badge">
+            3
+          </span>
+        </div>
+
+      </header>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h4>Today's Revenue</h4>
+          <h2>₹14,200</h2>
+          <p>13 appointments</p>
+          <span>+12% vs yesterday</span>
+        </div>
+        <div class="kpi-card">
+          <h4>This Month</h4>
+          <h2>₹3,84,500</h2>
+          <p>381 customers</p>
+          <span>+8% vs last month</span>
+        </div>
+        <div class="kpi-card">
+          <h4>Repeat Rate </h4>
+          <h2>67%</h2>
+          <p>of customers return</p>
+          <span>Good</span>
+        </div>
+        <div class="kpi-card">
+          <h4>Avg Ticket</h4>
+          <h2>₹798</h2>
+          <p>per visit</p>
+          <span>+₹45 this month</span>
+        </div>
+        <div class="quick-actions">
+          <button>+ New Appointment</button>
+          <button>Add Customer</button>
+          <button>Send Campaign</button>
+        </div>
+      </div>
+
+      <div class="analytics-section">
+
+        <div class="chart-card">
+          <h2> Revenue Analytics</h2>
+          <canvas id="revenueChart"></canvas>
+        </div>
+
+        <div class="stats-card">
+
+          <div class="stat-item">
+            <h3>Top Service</h3>
+            <p>Hair Colour</p>
+            <span>₹1,12,000 this month</span>
+          </div>
+
+          <div class="stat-item">
+            <h3>Top Staff</h3>
+            <p>Staff 1</p>
+            <span>₹90,890 earned</span>
+          </div>
+
+          <div class="stat-item">
+            <h3>Busiest Day</h3>
+            <p>Saturday</p>
+            <span>30 appointments avg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="appointments-card">
+        <div class="table-header">
+          <h2>Recent Appointments</h2>
+          <button class="view-all-btn">View All</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Staff</th>
+              <th>status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10:00 AM</td>
+              <td>Neha Kapoor</td>
+              <td>Hair Colour</td>
+              <td>Priya Sharma</td>
+              <td><span class="status confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>10:30 AM</td>
+              <td>Rohit Malhotra</td>
+              <td>Men's Haircut</td>
+              <td>Aman Singh</td>
+              <td><span class="status progress">In Progress</span></td>
+            </tr>
+            <tr>
+              <td>11:15 AM</td>
+              <td>Sunita Verma</td>
+              <td>Facial + Cleanup</td>
+              <td>Ritu Nair</td>
+              <td><span class="status confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>12:00 PM</td>
+              <td>Ananya Shah</td>
+              <td>Bridal Package</td>
+              <td>Priya Sharma</td>
+              <td><span class="status confirmed">Confirmed</span></td>
+            </tr>
+             <tr>
+              <td>2:00 PM</td>
+              <td>Walk-in</td>
+              <td>TBD</td>
+              <td>Unassigned</td>
+              <td><span class="status pending">Walk-in</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard.js"></script>
+  
+</body>
+</html>  

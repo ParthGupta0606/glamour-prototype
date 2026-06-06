@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                ✦ Glamour Studio
+            </div>
+            <nav>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+                <a href="appointments.html" class="active">  
+                    Appointment
+                </a>
+                <a href="customer.html">
+                    Customers
+                </a>
+                <a href="whatsapp.html">
+                    WhatsApp
+                </a>
+                <a href="#">
+                    Logout
+                </a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <h1>Appointments</h1>
+                    <p>Manage bookings and schedules</p>
+                </div>
+                <button class="new-appointment-btn" id="openModal">
+                    + New Appointment
+                </button>
+            </div>
+            <div class="view-toggle">
+                <button class="active-view">List View</button>
+                <button>Calendar View</button>
+            </div>
+            <div class="appointments-table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Customer</th>
+                            <th>Service</th>
+                            <th>Staff Assigned</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10:00 AM</td>
+                            <td>Neha Kapoor</td>
+                            <td>Hair Colour</td>
+                            <td>Priya Sharma</td>
+                            <td>
+                                <span class="status progress">
+                                    In Progress
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11:15 AM</td>
+                            <td>Sunita Verma</td>
+                            <td>Facial + Cleanup</td>
+                            <td>Ritu Nair</td>
+                            <td>
+                                <span class="status progress">
+                                    Confirmed
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02:00 PM</td>
+                            <td>Walk-In</td>
+                            <td>TBD</td>
+                            <td>Unassigned</td>
+                            <td>
+                                <span class="status progress">
+                                    Walk-in
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03:30 PM</td>
+                            <td>Meera Jain</td>
+                            <td>Waxing</td>
+                            <td>Ritu Nair</td>
+                            <td>
+                                <span class="status progress">
+                                    Confirmed
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="calendar-view hidden">
+                <div class="day-card">
+                    <h3> Monday </h3>
+                    <p>10:00 AM - Neha Kapoor </p>
+                    <p>12:00 PM - Sunita Verma</p>
+                </div>
+                <div class="day-card">
+                    <h3> Tuesday </h3>
+                    <p>11:30 AM - Meera Joshi</p>
+                </div>
+                <div class="day-card">
+                    <h3> Wednesday </h3>
+                    <p>02:00 PM - Walk-In</p>
+                </div>
+            </div>
+
+            <div class="modal-overlay" id="appointmentModal">
+                <div class="modal">
+                    <h2>New Appointment</h2>
+                    <form id="appointmentForm">
+                        <input type="text" placeholder="Customer Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <select required>
+                            <option>Select Service</option>
+                            <option>Hair Colour</option>
+                            <option>Haircut</option>
+                            <option>Facial</option>
+                            <option>Waxing</option>
+                            <option>Bridal</option>
+                            <option>Other</option>
+                        </select>
+
+                        <select required>
+                            <option>Select Staff</option>
+                            <option>Priya Sharma</option>
+                            <option>Aman Singh</option>
+                            <option>Ritu Nair</option>
+                        </select>
+                        <input type="date" required>
+                        <input type="time" required>
+                        <div class="modal-buttons">
+                            <button type="button" class="cancel-btn">
+                                Cancel
+                            </button>
+                            <button type="submit" class="book-btn">
+                                Book Appointment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+    <script>
+    const modal = document.getElementById("appointmentModal");
+    const openBtn = document.getElementById("openModal");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    openBtn.addEventListener("click", () => {
+        modal.classList.add("active");
+    });
+    cancelBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+    });
+    </script>
+</body>
+</html>
